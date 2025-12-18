@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>jQuery and plug-ins</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/plugin.css">
+<link rel="stylesheet" href="css/jquery-ui.css">
+
+<link rel="stylesheet" href="owlcarousel/owl.carousel.css">
+<link rel="stylesheet" href="owlcarousel/owl.theme.default.css">
+
+<!-- UniteGallery CSS -->
+<link rel="stylesheet" href="unitegallery/css/unite-gallery.css">
+<link rel="stylesheet" href="unitegallery/themes/default/ug-theme-default.css">
+
+<!-- UniteGallery VIDEO skin (як на фото: прев'ю справа) -->
+<link rel="stylesheet" href="unitegallery/themes/video/skin-right-thumb.css" type="text/css">
+
+<style>
+/* Невелике оформлення як на демках */
+body { margin: 0; }
+.container { width: 1200px; margin: 40px auto; }
+h1 { text-align: center; font-weight: 300; margin: 30px 0; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>magnifik popup video and map</h1>
+
+<a class="popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto">Open YouTube video</a><br>
+<a class="popup-vimeo" href="https://vimeo.com/45830194">Open Vimeo video</a><br>
+<a class="popup-gmaps" href="https://maps.app.goo.gl/tHinvWfw9ywCVmvu9">Open Google Map</a>
+
+<style>
+    /**
+ * Simple fade transition,
+ */
+.mfp-fade.mfp-bg {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+	opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+}
+</style>
+
+    <h1>magnifik popup gallery</h1>
+
+    <div class="popup-gallery">
+	<a href="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg" title="The Cleaner"><img src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg" width="75" height="75"></a>
+	<a href="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg" title="Winter Dance"><img src="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_s.jpg" width="75" height="75"></a>
+	<a href="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_b.jpg" title="The Uninvited Guest"><img src="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_s.jpg" width="75" height="75"></a>
+	<a href="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_b.jpg" title="Oh no, not again!"><img src="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_s.jpg" width="75" height="75"></a>
+	<a href="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg" title="Swan Lake"><img src="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_s.jpg" width="75" height="75"></a>
+	<a href="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_b.jpg" title="The Shake"><img src="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_s.jpg" width="75" height="75"></a>
+	<a href="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_b.jpg" title="Who's that, mommy?"><img src="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg" width="75" height="75"></a>
+</div>
+
+    <!-- ===================== -->
+    <!-- UNITE GALLERY: VIDEO -->
+    <!-- ===================== -->
+    <h1>Unite Gallery Video Slider</h1>
+
+    <div id="gallery-video" style="display:none;">
+        <div data-type="youtube"
+             data-videoid="1sLDOupXw0o"
+             data-title="GoPro Demo"
+             data-description="by Go Pro"></div>
+
+        <div data-type="youtube"
+             data-videoid="iVvyp7hZrDM0"
+             data-title="GoPro Demo"
+             data-description="by Go Pro"></div>
+
+        <div data-type="youtube"
+             data-videoid="Hw3WYVXE_q0"
+             data-title="GoPro Demo"
+             data-description="by Go Pro"></div>
+
+        <div data-type="youtube"
+             data-videoid="hYo2ro3-fe0k"
+             data-title="GoPro Demo"
+             data-description="by Go Pro"></div>
+    </div>
+
+    <!-- ============================ -->
+    <!-- UNITE GALLERY: TILES NESTED -->
+    <!-- ============================ -->
+    <h1>Unite Gallery Tiles Nested</h1>
+
+    <div id="gallery-nested" style="display:none;">
+        <img alt="Image 1 Title"  src="images/img2.jfif"  data-image="images/img1.jfif"  data-description="Image 1 Description">
+        <img alt="Image 2 Title"  src="images/img2.jfif"  data-image="images/img2.jfif"  data-description="Image 2 Description">
+        <img alt="Image 3 Title"  src="images/img3.jfif"  data-image="images/img3.jfif"  data-description="Image 3 Description">
+        <img alt="Image 4 Title"  src="images/img4.jfif"  data-image="images/img4.jfif"  data-description="Image 4 Description">
+        <img alt="Image 5 Title"  src="images/img5.jfif"  data-image="images/img5.jfif"  data-description="Image 5 Description">
+        <img alt="Image 6 Title"  src="images/img6.jfif"  data-image="images/img6.jfif"  data-description="Image 6 Description">
+        <img alt="Image 7 Title"  src="images/img1.jfif"  data-image="images/img1.jfif"  data-description="Image 7 Description">
+        <img alt="Image 8 Title"  src="images/img2.jfif"  data-image="images/img2.jfif"  data-description="Image 8 Description">
+        <img alt="Image 9 Title"  src="images/img3.jfif"  data-image="images/img3.jfif"  data-description="Image 9 Description">
+        <img alt="Image 10 Title" src="images/img4.jfif" data-image="images/img4.jfif" data-description="Image 10 Description">
+        <img alt="Image 11 Title" src="images/img5.jfif" data-image="images/img5.jfif" data-description="Image 11 Description">
+        <img alt="Image 12 Title" src="images/img6.jfif" data-image="images/img6.jfif" data-description="Image 12 Description">
+        <img alt="Image 13 Title" src="images/img1.jfif" data-image="images/img1.jfif" data-description="Image 13 Description">
+        <img alt="Image 14 Title" src="images/img2.jfif" data-image="images/img2.jfif" data-description="Image 14 Description">
+        <img alt="Image 15 Title" src="images/img3.jfif" data-image="images/img3.jfif" data-description="Image 15 Description">
+        <img alt="Image 16 Title" src="images/img4.jfif" data-image="images/img4.jfif" data-description="Image 16 Description">
+    </div>
+
+    <!-- ===================== -->
+    <!-- UNITE GALLERY: DEFAULT -->
+    <!-- ===================== -->
+    <h1>Unite Gallery Default</h1>
+
+    <div id="gallery-default" style="display:none;">
+        <img alt="Image 1 Title" src="images/img1.jfif" data-image="images/img1.jfif" data-description="Image 1 Description">
+        <img alt="Image 2 Title" src="images/img2.jfif" data-image="images/img2.jfif" data-description="Image 2 Description">
+        <img alt="Image 3 Title" src="images/img3.jfif" data-image="images/img3.jfif" data-description="Image 3 Description">
+        <img alt="Image 4 Title" src="images/img4.jfif" data-image="images/img4.jfif" data-description="Image 4 Description">
+        <img alt="Image 5 Title" src="images/img5.jfif" data-image="images/img5.jfif" data-description="Image 5 Description">
+        <img alt="Image 6 Title" src="images/img6.jfif" data-image="iimages/img6.jfif" data-description="Image 6 Description">
+    </div>
+
+    <!-- OWL CAROUSEL -->
+    <h1>Owl Carousel</h1>
+
+    <div class="owl-carousel owl-theme">
+        <div class="item"><img src="images/img1.jfif" alt=""></div>
+        <div class="item"><img src="images/img2.jfif" alt=""></div>
+        <div class="item"><img src="images/img3.jfif" alt=""></div>
+        <div class="item"><img src="images/img4.jfif" alt=""></div>
+        <div class="item"><img src="images/img5.jfif" alt=""></div>
+    </div>
+
+    <!-- ACCORDION -->
+    <h1>Accordion</h1>
+
+    <div id="accordion">
+        <h3>Section 1</h3>
+        <div><p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam.</p></div>
+
+        <h3>Section 2</h3>
+        <div><p>Sed non urna. Donec et ante.</p></div>
+
+        <h3>Section 3</h3>
+        <div>
+            <p>Phasellus pellentesque purus in massa.</p>
+            <ul>
+                <li>List item one</li>
+                <li>List item two</li>
+                <li>List item three</li>
+            </ul>
+        </div>
+
+        <h3>Section 4</h3>
+        <div><p>Cras dictum. Pellentesque habitant morbi.</p></div>
+    </div>
+
+    <!-- DRAGGABLE -->
+    <br>
+    <div id="draggable" class="ui-widget-content" style="width:160px;padding:10px;">
+        <p>Drag me around</p>
+    </div>
+
+</div>
+
+<!-- SCRIPTS (ПРАВИЛЬНИЙ ПОРЯДОК) -->
+<script src="js/jquery-3.7.1.min.js"></script>
+
+<!-- Magnific Popup core CSS file -->
+<link rel="stylesheet" href="magnific-popup/magnific-popup.css">
+<!-- Magnific Popup core JS file -->
+<script src="magnific-popup/jquery.magnific-popup.js"></script>
+
+<script>
+    $(document).ready(function() {
+	$('.popup-gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		tLoading: 'Loading image #%curr%...',
+		mainClass: 'mfp-img-mobile',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		},
+		image: {
+			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+			titleSrc: function(item) {
+				return item.el.attr('title') + ' by Marsel Van Oosten';
+			}
+		}
+	});
+});
+</script>
+
+<script >
+    $(document).ready(function() {
+	$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+		disableOn: 700,
+		type: 'iframe',
+		mainClass: 'mfp-fade',
+		removalDelay: 160,
+		preloader: false,
+
+		fixedContentPos: false
+	});
+});
+</script>
+
+<script src="js/jquery-ui.js"></script>
+
+<script src="unitegallery/js/unitegallery.min.js"></script>
+<script src="unitegallery/themes/default/ug-theme-default.js"></script>
+<script src="unitegallery/themes/tilesgrid/ug-theme-tilesgrid.js"></script>
+<script src="unitegallery/themes/video/ug-theme-video.js"></script>
+
+<script src="owlcarousel/owl.carousel.js"></script>
+
+<script>
+$(document).ready(function () {
+
+    /* VIDEO slider (як на фото) */
+    $("#gallery-video").unitegallery({
+        gallery_theme: "video"
+    });
+
+    /* Tiles Nested (як на фото) */
+    $("#gallery-nested").unitegallery({
+        gallery_theme: "tilesgrid",
+        tiles_type: "nested",
+        grid_num_rows: 3,
+        grid_space_between_cols: 15,
+        grid_space_between_rows: 15,
+
+        tile_enable_border: true,
+        tile_border_width: 4,
+        tile_border_color: "#ffffff",
+        tile_border_radius: 8,
+
+        tile_enable_textpanel: true,
+        tile_textpanel_bg_opacity: 0.6,
+        tile_textpanel_appear_type: "slide"
+    });
+
+    /* Default gallery */
+    $("#gallery-default").unitegallery();
+
+    /* Owl Carousel */
+    $(".owl-carousel").owlCarousel({
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        margin: 10,
+        nav: false,
+        responsive: {
+            0: { items: 1 },
+            600: { items: 3 },
+            1000: { items: 5 }
+        }
+    });
+
+    /* Accordion */
+    $("#accordion").accordion({
+        collapsible: true,
+        heightStyle: "content",
+        active: 0
+    });
+
+    /* Draggable */
+    $("#draggable").draggable();
+
+});
+</script>
+
+</body>
+</html>
